@@ -32,14 +32,16 @@
             flowLayoutPanel1 = new FlowLayoutPanel();
             buttonSelect = new Button();
             ButtonRemove = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = Color.LimeGreen;
-            button1.Location = new Point(1076, 12);
+            button1.Location = new Point(1076, 14);
             button1.Name = "button1";
-            button1.Size = new Size(94, 73);
+            button1.Size = new Size(94, 71);
             button1.TabIndex = 0;
             button1.Text = "ADD";
             button1.UseVisualStyleBackColor = false;
@@ -74,11 +76,23 @@
             ButtonRemove.UseVisualStyleBackColor = true;
             ButtonRemove.Click += ButtonRemove_Click;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.LimeGreen;
+            button2.Location = new Point(921, 14);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 71);
+            button2.TabIndex = 4;
+            button2.Text = "Pixabay";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1182, 768);
+            Controls.Add(button2);
             Controls.Add(ButtonRemove);
             Controls.Add(buttonSelect);
             Controls.Add(flowLayoutPanel1);
@@ -95,5 +109,7 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private Button buttonSelect;
         private Button ButtonRemove;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button button2;
     }
 }

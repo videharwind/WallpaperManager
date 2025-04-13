@@ -25,7 +25,7 @@ namespace WallpaperManager
         }
         private Image LoadWithoutLock(string path)
         {
-            using(FileStream stream = new FileStream(path,FileMode.Open,FileAccess.Read,FileShare.ReadWrite))
+            using (FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
                 return Image.FromStream(stream);
             }
@@ -81,7 +81,7 @@ namespace WallpaperManager
             }
             LoadWallpapers();
         }
-        
+
         public void LoadWallpapers()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -147,13 +147,20 @@ namespace WallpaperManager
 
         private void ButtonRemove_Click(object sender, EventArgs e)
         {
-            if(SelectedPicture !=null)
+            if (SelectedPicture != null)
             {
                 File.Delete((string)SelectedPicture.Tag);
                 buttonSelect.BackColor = Color.White;
                 ButtonRemove.BackColor = Color.White;
                 SelectedPicture = null;
             }
+            LoadWallpapers();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Pixabay pixaform = new Pixabay();
+            pixaform.ShowDialog();
             LoadWallpapers();
         }
     }
